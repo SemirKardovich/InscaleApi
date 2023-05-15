@@ -71,7 +71,7 @@ namespace InscaleApi.Services
             {
                 int totalBookedQuantity = CalculateTotalBookedQuantity(bookingService.GetAllBookings(), booking);
 
-                return totalBookedQuantity < resource.Quantity;
+                return totalBookedQuantity + booking.BookedQuantity <= resource.Quantity;
             }
 
             return false;
